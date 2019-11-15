@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="layer/layer.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<style>
+
+    .content{
+        height: 270px;
+        overflow: hidden;
+    }
+    .mybutton{
+        width: 134px;
+        height: 50px;
+        border-radius: 0;
+    }
+    .mykuai{
+        padding: 0px;
+    }
+</style>
+
+
+<body>
+
+<!--导航条-->
+<div class="nav navbar-default">
+    <div class="container">
+        <!--header部分-->
+        <div class="navbar-header ">
+            <a href="" class="navbar-brand ">今日头条</a>
+        </div>
+        <!--header部分end-->
+        <!--第二部分导航栏-->
+        <ul class="navbar-nav nav">
+            <li><a href="">首页</a></li>
+            <li><a href="">国际</a></li>
+            <li><a href="">国内</a></li>
+            <li><a href="">社会</a></li>
+            <li><a href="">军事</a></li>
+            <li><a href="">科技</a></li>
+        </ul>
+        <!--第二部分导航栏end-->
+
+        <!--第三部分导航栏，最右部分搜索表单-->
+        <form action="" class="nav navbar-form navbar-right">
+            <div class="input-group " >
+                <input type="text" placeholder="关键字" id="key-word" class="key-word form-control" >
+                <a class="input-group-addon" id="search-button" style="cursor: pointer" onclick="sousuo()">搜索</a>
+            </div>
+        </form>
+        <!--第三部分导航栏end-->
+    </div>
+</div>
+<!--抽奖-->
+<div id="box" style="display: none;width: 400px;height: 300px;" class="text-center">
+    <div style="width: 400px;height: 225px">
+        <img src="img/公孙离.jpg" alt="公孙离" class="img-responsive " id="picture">
+    </div>
+    <div class="col-xs-4  mykuai btn-group">
+        <!--<button class="btn btn-default dropdown-toggle mybutton" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            抽一次
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">抽两次</a></li>
+        </ul>-->
+
+        <select id="sel" class="form-control selectpicker  dropup mybutton btn"style="text-align: center;background-color: #d58512;color: white">
+            <option value="1">抽一次</option>
+            <option value="2">二连抽</option>
+        </select>
+    </div>
+
+
+    <div class="col-xs-4 mykuai">
+        <input type="button" value="开始抽奖" id="start" class="btn-danger btn  mybutton">
+    </div>
+    <div class="col-xs-4 mykuai">
+        <input type="button" value="停止抽奖" id="end"  class="btn-warning btn  mybutton">
+    </div>
+</div>
+<hr>
+<!--导航条end-->
+<!--三块部分列表-->
+<div class="container border " id="content">
+        <div class="col-md-2">
+            <div class="list-group mycaidan">
+                <a href="#" class="list-group-item active">
+                    综合
+                </a>
+                <a href="#th1" class="list-group-item" >游戏</a>
+                <a href="#" class="list-group-item">明星</a>
+                <a href="#" class="list-group-item">电影</a>
+                <a href="#" class="list-group-item">动漫</a>
+                <a href="#" class="list-group-item">娱乐</a>
+                <a href="#th2" class="list-group-item">八卦</a>
+            </div>
+        </div>
+
+       <!-- 游戏-->
+        <div class="col-md-7" >
+            <div class="row btn-default mypadding">
+                <div class="col-md-5">
+                    <img src="img/dota.jpg" style="height: 150px;width: 300px;" class="img-rounded img-responsive" >
+                </div>
+                <div class="col-md-7 myxiao">
+                    <br>
+                    <a href="descrite.html" class="title"><h4 class="list-group-item-heading">Dota2：OB青训尘埃落定 十人最终名单确定工具人水瓶座落选</h4></a>
+                    <br><br>
+                    <div class="col-xs-1">
+                        <img src="img/xiao.jpg" class="img-responsive img-rounded" height="25" style="vertical-align: middle">
+                    </div>
+                    <a href="descrite.html" class="list-group-item-heading ">游久电竞 ⋅ 4评论 ⋅ 10分钟前不感兴趣</a>
+                </div>
+            </div>
+            <div class="row btn-default mypadding">
+                <div class="col-md-5">
+                    <img src="img/2.jpg" style="height: 150px;width: 300px;" class="img-rounded img-responsive" >
+                </div>
+                <div class="col-md-7 myxiao">
+                    <br>
+                    <a href="descrite.html" class="title"><h4 class="list-group-item-heading">王者荣耀：最便宜的英雄，拥有最贵的皮肤，一直在增强从未被削弱</h4></a>
+                    <br><br>
+                    <div class="col-xs-1">
+                        <img src="img/xiao2.jpg" class="img-responsive img-rounded" height="25" style="vertical-align: middle">
+                    </div>
+                    <a href="" class="list-group-item-heading ">游戏资讯大玩家 ⋅ 20评论 ⋅ 14分钟前不感兴趣</a>
+                </div>
+            </div>
+            <div class="row btn-default mypadding">
+                <div class="col-md-5">
+                    <img src="img/center3.jpg" style="height: 150px;width: 300px;" class="img-rounded img-responsive" >
+                </div>
+                <div class="col-md-7 myxiao">
+                    <br>
+                    <a href="descrite.html" class="title"><h4 class="list-group-item-heading">Uzi接受检测，感知能力超过97%的人类，代价普通人无法接受</h4></a>
+                    <br><br>
+                    <div class="col-xs-1">
+                        <img src="img/xiao3.jpg" class="img-responsive img-rounded" height="25" style="vertical-align: middle">
+                    </div>
+                    <a href="" class="list-group-item-heading ">游戏大妹 ⋅ 47评论 ⋅ 20分钟前不感兴趣</a>
+                </div>
+            </div>
+            <div class="row btn-default mypadding">
+                <div class="col-md-5">
+                    <img src="img/center4.jpg" style="height: 150px;width: 300px;" class="img-rounded img-responsive" >
+                </div>
+                <div class="col-md-7 myxiao">
+                    <br>
+                    <a href="descrite.html" class="title"><h4 class="list-group-item-heading">元歌无法复制的五位英雄，青铜选手都能一眼看破</h4></a>
+                    <br><br>
+                    <div class="col-xs-1">
+                        <img src="img/xiao4.jpg" class="img-responsive img-rounded">
+                    </div>
+                    <a href="" class="list-group-item-heading ">电竞怪客官方 ⋅ 5评论 ⋅ 45分钟前不感兴趣</a>
+                </div>
+            </div>
+            <div class="row btn-default mypadding">
+                <div class="col-md-5">
+                    <img src="img/5.jpg" style="height: 150px;width: 300px;" class="img-rounded img-responsive" >
+                </div>
+                <div class="col-md-7 myxiao">
+                    <br>
+                    <a href="descrite.html" class="title"><h4 class="list-group-item-heading">特朗普推迟加征中国商品关税，美股马上就涨了！</h4></a>
+                    <br><br>
+                    <div class="col-xs-1">
+                        <img src="img/xiao5.jpg" class="img-responsive img-rounded" height="25" style="vertical-align: middle">
+                    </div>
+                    <a href="" class="list-group-item-heading ">中央政法委长安剑 ⋅  43评论 ⋅  41分钟前不感兴趣</a>
+                </div>
+            </div>
+
+            <div class="row btn-default mypadding">
+                <div class="col-md-5">
+                    <img src="img/xiao6.jpg" style="height: 150px;width: 300px;" class="img-rounded img-responsive" >
+                </div>
+
+                <div class="col-md-7 myxiao">
+                    <br>
+                    <a href="descrite.html" class="title"><h4 class="list-group-item-heading">郭台铭宣布退出中国国民党 蔡英文阵营第一时间送来了嘲讽</h4></a>
+                    <br><br>
+                    <div class="col-xs-1">
+                        <img src="img/6.jpg" class="img-responsive img-rounded" height="25" style="vertical-align: middle">
+                    </div>
+                    <a href="" class="list-group-item-heading ">中国台湾网 ⋅  1644评论 ⋅  32分钟前</a>
+                </div>
+            </div>
+            <nav aria-label="Page navigation" class="text-center">
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--中間部分結束-->
+        <div class="col-md-3 ">
+
+            <div class="text-center" style="font-size: 25px;">
+                <img src="img/choujiang.gif" class="img-responsive">
+            </div>
+            <div>
+                <a href="javascript:;" id="about"><img src="img/choujiang.jpg" class="img-responsive"></a>
+            </div>
+            <div class="text-center" style="font-size: 25px;margin-top: 10px">24小时热文</div>
+            <hr>
+            <div class="row btn-default myright">
+                <div class="col-md-5">
+                    <img src="img/r1.jpg" style="height: 80px;width: 150px;" class="img-rounded img-responsive" >
+                </div>
+                <div class="col-md-7">
+                    <h7 class="list-group-item-heading">Dota2：OB青训尘埃落定 十人最终名单确定工具人水瓶座落</h7>
+                </div>
+                <div class="text-right col-md-12">
+                    <a href="" class="list-group-item-heading ">中央政法委长安剑</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row btn-default myright">
+
+                <div class="col-md-5">
+                    <img src="img/r2.jpg" style="height: 80px;width: 150px;" class="img-rounded img-responsive" >
+                </div>
+                <div class="col-md-7">
+                    <h7 class="list-group-item-heading">碎片商店血赚的五款皮肤，街头霸王已绝版，有这两款的玩家爽了</h7>
+
+                </div>
+                <div class="text-right col-md-12"><a href="" class="list-group-item-heading ">小柒小故事</a></div>
+            </div>
+            <hr>
+            <div class="row btn-default myright">
+                <div class="col-md-5">
+                    <img src="img/r3.jpg"style="height: 80px;width: 150px;" class="img-rounded img-responsive" >
+                </div>
+                <div class="col-md-7">
+                    <h7 class="list-group-item-heading">8分以上汉化单机推荐</h7>
+                </div>
+                <div class="text-right col-md-12"><a href="" class="list-group-item-heading ">好牛叉手机游戏</a></div>
+            </div>
+            <hr>
+            <div class="row btn-default myright">
+                <div class="col-md-5">
+                    <img src="img/r4.jpg"style="height: 80px;width: 150px;"class="img-rounded img-responsive">
+                </div>
+                <div class="col-md-7">
+                    <h7 class="list-group-item-heading">谷歌突然宣布！华为措手不及！华为Mate30或将推迟上市</h7>
+                </div>
+                <div class="text-right col-md-12"><a href="" class="list-group-item-heading ">科技六分钟</a></div>
+            </div>
+            <hr>
+            <h5 class="text-center">王者荣耀</h5>
+            <!--轮播图-->
+            <div class="carousel slide" style="" id="myPic" data-ride="carousel" data-interval="2000">
+
+                <!--轮播图片-->
+                <div class="carousel-inner">
+                    <div class="item active" >
+                        <img src="img/2.jpg" alt="" >
+                    </div>
+                    <div class="item">
+                        <img src="img/3.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="img/1.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="img/4.jpg" alt="">
+                    </div>
+                </div>
+                <!--轮播图片end-->
+                <!--左右图标-->
+                <a class="left carousel-control" href="#myPic"  data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+
+                <a class="right carousel-control" href="#myPic" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+                <!--左右图标end-->
+            </div>
+            <!--轮播图end-->
+            <hr>
+        </div>
+</div>
+<!--三块部分列表end-->
+<script>
+
+    /*function $(id){
+        return document.getElementById(id);
+    }
+    var putWordsObj = $('key-word');
+    putWordsObj.onfocus = function(){
+        if(this.value == '请输入搜索内容')this.value='';
+    }
+    putWordsObj.onblur = function(){
+        if(!this.value)this.value='请输入搜索内容';
+    }
+    //search
+    function sousuo(){
+        var content = $('content').innerHTML;
+        var keyWord = $('key-word').value;
+        content = search_do(content, keyWord);
+        $('content').innerHTML = content;
+    }
+    function search_do(content,keyWord){
+        var keyWordArr = keyWord.replace(/[\s]+/g,' ').split(' ');
+        var re;
+        for(var n = 0; n < keyWordArr.length; n ++) {
+            re = new RegExp(""+keyWordArr[n]+"","gmi");
+            content = content.replace(re,'<span style="color:#0f0;background-color:grey">'+keyWordArr[n]+'</span>');
+        }
+        return content;
+    }*/
+</script>
+<script>
+    //抽奖弹出框
+    $('#about').on('click',function(){
+        layer.open({
+            title:"<div style='margin-left:150px;'>英雄抽奖</div>",
+            type:1,
+            content:$('#box'),
+            area:['401px','350px']
+        });
+    });
+    function msg2(src) {
+        layer.msg("<center>恭喜抽到大奖</center>"+"<img src="+src+" style='left:200px;width: 400px;height: 225px;' class='img-rounded img-responsive'>", {time: 2000});
+
+    }
+    function msg3(src) {
+        layer.msg("<center>恭喜抽到大奖</center>"+"<img src="+src+" style='width: 400px;height: 225px;' class='img-rounded img-responsive'>", {time: 3000});
+    }
+    var timer;
+    var start = document.getElementById('start');
+    var end = document.getElementById('end');
+    var picture = document.getElementById('picture');
+    var sel = document.getElementById('sel');
+    end.disabled=true;
+    //用来存储图片路径的数组
+    var picarr = ['img/公孙离.jpg', 'img/刘婵.jpg', 'img/裴擒虎.jpg', 'img/沈梦溪.jpg'
+        , 'img/小乔.jpg', 'img/孙悟空.jpg', 'img/宫本.jpg', 'img/孙策.jpg', 'img/吕布.jpg'
+        , 'img/干将莫邪.jpg', 'img/耀.jpg', 'img/夏侯惇.jpg', 'img/百里守约.jpg'
+        , 'img/貂蝉.jpg', 'img/凯.jpg', 'img/明世隐.jpg', 'img/1.jpg', 'img/典韦.jpg'
+        , 'img/2.jpg', 'img/4.jpg'];
+    //给按钮加单击事件
+    clearInterval(timer);
+    start.onclick = function () {
+        start.disabled=true;
+        end.disabled=false;
+        sel.disabled=true;
+        //设置定时器,每隔一秒换一张图片
+        timer = setInterval(function () {
+            //抽取数组随机下标
+            var num = Math.floor(Math.random() * (picarr.length - 1 + 1 - 0) + 0);
+            //将抽到的图片路径给图片元素
+            picture.setAttribute('src', picarr[num]);
+        }, 50);
+    }
+    //给停止按钮加单击事件
+    end.onclick = function () {
+        start.disabled=false;
+        end.disabled=true;
+        sel.disabled=false;
+        clearInterval(timer);
+        if(sel.value==1){
+            msg2(picture.src);
+        }else if(sel.value==2){
+            msg2(picture.src);
+            var timer3=setInterval(function () {
+                //抽取数组随机下标
+                var num = Math.floor(Math.random() * (picarr.length - 1 + 1 - 0) + 0);
+                //将抽到的图片路径给图片元素
+                picture.setAttribute('src', picarr[num]);
+            },50)
+            setTimeout(function () {
+                msg3(picarr[timer2()]);
+                clearInterval(timer3);
+            },2000)
+        }
+    }
+
+    function timer2() {
+        //抽取数组随机下标
+        var num2 = Math.floor(Math.random() * (picarr.length - 1 + 1 - 0) + 0);
+        //将抽到的图片路径给图片元素
+        if(sel.value==1){
+            picture.setAttribute('src', picarr[num2]);
+        }else if(sel.value==2){
+            if(num2+3<picarr.length){
+                picture.setAttribute('src', picarr[num2+3]);
+                return num2+3;
+            }else{
+                return num2-3;
+            }
+        }
+    }
+</script>
+</body>
+</html>

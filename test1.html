@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="layer/layer.js"></script>
+</head>
+<script>
+    /*var i=1;
+    var ji=1;
+    do{
+        ji=i*ji;
+        i++;
+    }while (i<=6);
+    layer.msg('6的阶乘为：'+ji,{icon:1,time:1000},function () {
+        document.write("123123123")
+    })*/
+    /*var b=prompt("请输入要显示的星星数：")
+    for(var a=1;a<=b;a++){
+        document.write("★");
+        if(a%5==0){
+            document.write("<br>")
+        }
+    }*/
+    /*for(var a=1;a<=5;a++){
+        for(var b=0;b<a;b++){
+            document.write("★");
+        }
+        document.write("<br>");
+    }*/
+    /*for(var b=0;b<5;b++){
+        for(var a=5;b<a;a--){
+            document.write("★");
+        }
+        document.write("<br>");
+    }*/
+    /*for(b=0;b<5;b++){
+        for(a=5;a>b;a--){
+            document.write("★");
+        }
+        document.write("<br>");
+    }*/
+
+    /*document.write("<table border='1' style='border-right: 0;border-top: 0;' cellspacing='1.5' cellpadding='0'>");
+    for(var a=1;a<=9;a++){
+        document.write("<tr>");
+        for(var b=1;b<=a;b++){
+            document.write("<td>");
+            document.write(b+"x"+a+"="+a*b+"");
+            document.write("</td>");
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");*/
+    //求三个数的最大值
+    var a=parseInt(prompt("第一个数"));
+    var b=parseInt(prompt("第二个数"));
+    var c=parseInt(prompt("第三个数"));
+
+    if(a>b&&b>c){
+        document.write("最大的数是"+a);
+    }else if(b>a&&b>c){
+        document.write("最大的数是"+b);
+    }else{
+        document.write("最大的数是"+c);
+    }
+</script>
+<style>
+    td:hover{
+        background-color: #cccccc;
+        cursor: pointer;
+    }
+</style>
+<body>
+<table>
+    <tr>
+        <td></td>
+    </tr>
+</table>
+</body>
+</html>
